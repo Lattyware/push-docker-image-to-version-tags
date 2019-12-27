@@ -1,13 +1,24 @@
-name: 'Wait'
-description: 'Wait a designated number of milliseconds'
+name: 'Push Docker Image To Version Tags'
+description: 'Push a docker image and tag it with all the semantic version tags.'
 inputs:
-  milliseconds:  # id of input
-    description: 'number of milliseconds to wait'
+  image:
+    description: 'The name of the image to push.'
     required: true
-    default: '1000'
-outputs:
-  time: # output will be available to future steps 
-    description: 'The message to output'
+  tag:
+    description: "The initial tag the image has."
+    required: true
+  version:
+    description: "The full (semver-compliant) version number, if not given, this will only push to the existing tag and latest."
+    required: false
+  server:
+    description: 'The url of the server to push to.'
+    required: false
+  user:
+    description: "The user to authenticate to the server as."
+    required: true
+  token:
+    description: "The token to authenticate with the server with."
+    required: true
 runs:
   using: 'node12'
   main: 'dist/index.js'
