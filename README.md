@@ -15,6 +15,9 @@ What this action does:
         - Tag the image with the minor version (e.g: 1.0).
         - Tag the image with the major version (e.g: 1) .
  - Tag the image with "latest".
+ 
+Note that it doesn't really make sense to use this on the GitHub Package Repository, as tags are immutable 
+there.
 
 ## Usage
 
@@ -32,6 +35,9 @@ What this action does:
 
         # The url of the server to push to.
         server: ""
+        
+        # The path under the server to push to. On GitHub Package Repository, for example, this is 'username/repo'.
+        server_path: ""
 
         # The user to authenticate to the server as.
         user: ""

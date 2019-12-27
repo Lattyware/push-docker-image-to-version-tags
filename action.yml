@@ -1,8 +1,8 @@
-name: 'Push Docker Image To Version Tags'
-description: 'Push a docker image and tag it with all the semantic version tags.'
+name: "Push Docker Image To Version Tags"
+description: "Push a docker image and tag it with all the semantic version tags."
 inputs:
   image:
-    description: 'The name of the image to push.'
+    description: "The name of the image to push."
     required: true
   tag:
     description: "The initial tag the image has."
@@ -11,7 +11,10 @@ inputs:
     description: "The full (semver-compliant) version number, if not given, this will only push to the existing tag and latest."
     required: false
   server:
-    description: 'The url of the server to push to.'
+    description: "The url of the server to push to."
+    required: false
+  server_path:
+    description: "The path under the server to push to. On GitHub Package Repository, for example, this is 'username/repo'."
     required: false
   user:
     description: "The user to authenticate to the server as."
@@ -20,5 +23,5 @@ inputs:
     description: "The token to authenticate with the server with."
     required: true
 runs:
-  using: 'node12'
-  main: 'dist/index.js'
+  using: "node12"
+  main: "dist/index.js"

@@ -7,7 +7,6 @@
     "lint": "eslint index.js",
     "package": "ncc build index.js -o dist"
   },
-  "type": "module",
   "author": "Gareth Latty",
   "license": "MIT",
   "dependencies": {
