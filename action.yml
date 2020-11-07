@@ -1,11 +1,14 @@
 name: "Push Docker Image To Version Tags"
 description: "Push a docker image and tag it with all the semantic version tags."
 inputs:
+  source:
+    description: "A complete tag for the image to push that already exists."
+    required: true
   image:
     description: "The name of the image to push."
     required: true
-  tag:
-    description: "The initial tag the image has."
+  hash:
+    description: "The commit hash for the source the image was built from."
     required: true
   version:
     description: "The full (semver-compliant) version number, if not given, this will only push to the existing tag and latest."
